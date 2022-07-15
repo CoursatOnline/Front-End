@@ -9,10 +9,11 @@ export class NavbarComponent implements OnInit {
   logoSource = './assets/images/CoursatOnLine Logo.png';
   logoWidth = 70;
   logoHeight = 65;
-  isLoggedIn = false;
+  isLoggedIn = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+
