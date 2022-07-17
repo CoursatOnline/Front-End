@@ -1,0 +1,94 @@
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.p-paython ,
+.p-csharp,
+.p-JavaScript,
+.p-Angular,
+.p-React,
+.p-Excel,
+.p-PowerPoint,
+.p-MVC{
+    /* opacity: 0; */
+    background-color: white;
+    text-decoration: none;
+    width: 100%;
+    border: 1px black solid;
+    height: 93%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /* gap: 28px; */
+    justify-content: space-evenly;
+    padding: 15px;
+}
+.paython,
+.csharp,
+.JavaScript,
+.Angular,
+.React,
+.Excel,
+.PowerPoint,
+.MVC {
+    text-decoration: none;
+    /* color: #b5a9a9; */
+    font-weight: bold;
+}
+/* 
+.paython:hover,
+.csharp:hover,
+.JavaScript:hover,
+.Angular:hover,
+.React:hover,
+.Excel:hover,
+.PowerPoint:hover,
+.MVC:hover{
+color: black;
+}
+
+
+.paython:hover .p-paython{
+    opacity: 1;
+}
+
+
+.csharp:hover .p-csharp{
+    opacity: 1;
+}
+
+.JavaScript:hover .p-JavaScript{
+    opacity: 1;
+}
+.Angular:hover .p-Angular{
+    opacity: 1;
+}
+.React:hover .p-React{
+    opacity: 1;
+}
+
+.Excel:hover .p-Excel{
+    opacity: 1;
+}
+
+.PowerPoint:hover .p-PowerPoint{
+    opacity: 1;
+}
+
+.MVC:hover .p-MVC{
+    opacity: 1;
+} */
+
+.broad {
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-bottom: 36px;
+}
+
+.paython-imges {
+    display: flex;
+    
+}
