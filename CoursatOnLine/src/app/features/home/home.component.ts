@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
     config.pauseOnHover = true;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

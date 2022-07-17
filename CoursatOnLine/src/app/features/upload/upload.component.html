@@ -1,0 +1,14 @@
+
+<div class="text-center uploadcomponent">
+  <input class="form-control fileinput" type="file"
+          (change)="onChange($event)">
+
+  <button (click)="onUpload()"
+      class="btn btn-secondary">
+      <i class="bi bi-upload"></i>
+  </button>
+</div>
+
+<div class="container" *ngIf="loading">
+  <h3>Loading ...</h3>
+</div>

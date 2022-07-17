@@ -1,0 +1,24 @@
+.addcatform{
+  max-width: 80%;
+  margin: 30px auto;
+}
+.radiodiv{
+  max-width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+label{
+  font-size: 15px;
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+input{
+  max-width: 50%;
+}
+.submitbtn{
+  margin: 20px 20px 20px 0px;
+  background-color: rgb(87, 0, 128);
+  border: 1px solid rgb(87, 0, 128);
+}

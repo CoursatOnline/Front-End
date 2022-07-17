@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { IndexComponent } from './index/index.component';
-
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { UploadComponent } from '../features/upload/upload.component';
 
 
 
 @NgModule({
   declarations: [
-  
-    IndexComponent
+    IndexComponent,
+    AddCategoryComponent,
   ],
   imports: [
     CommonModule,
-    CategoriesRoutingModule
+    FormsModule,
+    CategoriesRoutingModule,
+    UploadComponent
+
   ],
   exports: [
 
