@@ -38,7 +38,7 @@
   <div class="form-group">
     <label for="exampleFormControlSelect2">Categories</label>
     <select multiple class="form-control" id="exampleFormControlSelect2" name="crscats" ngModel>
-      <option value="1">1</option>
+      <option *ngFor="let item of cats" value="{{item.id}}">{{item.name}}</option>
     </select>
   </div>
   <button type="submit" class="btn btn-primary submitbtn">Submit</button>
