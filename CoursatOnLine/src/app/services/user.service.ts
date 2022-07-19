@@ -10,7 +10,7 @@ export class UserService {
 
   constructor(private router:Router) { }
   setUser(data:LOGIN_TYPE):void{
-    window.localStorage.setItem('token',`Bearer ${data.Token}`);
+    window.localStorage.setItem('token',`Bearer ${data.token}`);
     window.localStorage.setItem('user',JSON.stringify(data) )
     console.log('from userLogin',data);
   }

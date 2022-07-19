@@ -11,6 +11,7 @@ export class LoginService {
 
   constructor(private http:HttpClient,private userLoginSer:UserService,private router:Router) { }
   private baseUrl:string = 'https://localhost:7135/api/Auth/token';
+  //private baseUrl:string = 'https://localhost:44344//api/Auth/token';//IIS Express
   login(data:{email:string,password:string}){
     this.http.post<LOGIN_TYPE>(this.baseUrl,data).subscribe(
      (data)=>{

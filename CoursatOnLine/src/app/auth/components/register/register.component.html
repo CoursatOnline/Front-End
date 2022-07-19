@@ -1,0 +1,93 @@
+
+<div class="blue-container">
+  <div class="signup-form pt-5">
+    <form method="post" #userForm = "ngForm" novalidate (ngSubmit)="onSubmit()">
+      {{userForm.value|json}}
+      {{user.Email}}
+      {{user.Password}}
+      {{user.FirstName}}
+      {{user.LastName}}
+      {{user.Username}}
+      {{registerpassword.invalid && registerpassword.touched}}
+      {{registeremail.invalid && registeremail.touched}}
+      {{registerpassword.valid || registerpassword.untouched}}
+      <h2>Sign Up</h2>
+      <p>Please fill in this form to create an account!</p>
+      <hr>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+          <input type="text" name="FirstName" placeholder = "FirstName" class="form-control"
+         required [(ngModel)]="user.FirstName" #registerFirstName="ngModel"
+          [class.is-invalid] = "registerFirstName.invalid && registerFirstName.touched">
+         <small class="text-danger" [class.d-none] = "registerFirstName.valid || registerFirstName.untouched">FirstName is required</small>
+        </div>
+
+        <div class="col">
+         <input type="text" name="LastName" placeholder = "LastName" class="form-control"
+         required [(ngModel)]="user.LastName" #registerLastName="ngModel"
+          [class.is-invalid] = "registerLastName.invalid && registerLastName.touched">
+         <small class="text-danger" [class.d-none] = "registerLastName.valid || registerLastName.untouched">LastName is required</small>
+        </div>
+        </div>
+        </div>
+        <div class="form-group">
+          <input type="text" name="UseName" placeholder = "UserName" class="form-control"
+          required [(ngModel)]="user.Username" #registerUseName="ngModel"
+          [class.is-invalid] = "registerUseName.invalid && registerUseName.touched">
+         <small class="text-danger" [class.d-none] = "registerUseName.valid || registerUseName.untouched">UserName is required</small>
+        </div>
+        <div class="form-group">
+        <input type="email" name="Email" placeholder = "Email" class="form-control"
+         required [(ngModel)]="user.Email" #registeremail="ngModel"
+          [class.is-invalid] = "registeremail.invalid && registeremail.touched">
+         <small class="text-danger" [class.d-none] = "registeremail.valid || registeremail.untouched">Email is required</small>
+      </div>
+      <div class="form-group">
+        <input type="password" name="Password" placeholder = "Password" class="form-control"
+        required [(ngModel)]="user.Password" #registerpassword="ngModel"
+        [class.is-invalid] = "registerpassword.invalid && registerpassword.touched">
+       <small class="text-danger" [class.d-none] = "registerpassword.valid || registerpassword.untouched">Password is required</small>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="SignUp"  class="btn btn-primary btn-lg" [disabled]="userForm.form.invalid">
+      </div>
+      <div class="hint-text">Already have an account? <a [routerLink] = "['/login']">Login here</a></div>
+    </form>
+
+  </div>
+</div>
+
+<!-- <div class="blue-container">
+  <div class="signup-form pt-5">
+      @using (@Html.BeginForm("SignUpPost", "UserManagement", FormMethod.Post))
+      {
+          <h2>Sign Up</h2>
+          <p>Please fill in this form to create an account!</p>
+          <hr>
+          <div class="form-group">
+              <div class="row">
+                  <div class="col">@Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name", required = "required" })</div>
+                  <div class="col">@Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name", required = "required" })</div>
+              </div>
+          </div>
+          <div class="form-group">
+              @Html.TextBoxFor(m => m.Username, new { @class = "form-control", placeholder = "User name", required = "required" })
+          </div>
+          <div class="form-group">
+              @Html.TextBoxFor(m => m.Email, new { @class = "form-control", type = "email", placeholder = "Email", required = "required" })
+          </div>
+          <div class="form-group">
+              @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
+          </div>
+          <div class="form-group">
+              @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", placeholder = "Postal Code", required = "required" })
+          </div>
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+          </div>
+      }
+      <div class="hint-text">Already have an account? <a asp-action="Index" asp-controller="user">Login here</a></div>
+  </div>
+</div>
+ -->

@@ -3,7 +3,7 @@
 
 export class LOGIN_TYPE{
   constructor(
-    public Token:string,
+    public token:string,
     public Message: string,
     public IsAuthenticated : string,
     public Username: string,
