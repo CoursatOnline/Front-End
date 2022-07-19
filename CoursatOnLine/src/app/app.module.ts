@@ -26,6 +26,7 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 
 
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
+import { UploadVidComponent } from './features/upload-vid/upload-vid.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin
     PowerpointComponent,
     AngularComponent,
     ReactComponent,
-    MvcComponent,NavbarafterloginComponent,StudentHomeComponent,CartCoursesComponent
+    MvcComponent,NavbarafterloginComponent,StudentHomeComponent,CartCoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,9 +52,10 @@ import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    UploadComponent
+    UploadComponent,
+    UploadVidComponent
   ],
-  exports: [UploadComponent],
+  exports: [UploadComponent,UploadVidComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

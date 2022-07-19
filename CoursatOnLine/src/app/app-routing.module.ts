@@ -6,10 +6,11 @@ import { ListCoursesComponent } from './features/featuures/list-courses/list-cou
 const routes: Routes = [
   { path: 'index', component:HomeComponent},
   { path: 'listCourses', component:ListCoursesComponent},
-  
+
+  { path: 'instructor', loadChildren: () => import('./instructor/instructor.module').then(i => i.InstructorModule)},
   { path: 'categories', loadChildren: () => import('./categories/categories.module').then(c => c.CategoriesModule) },
   { path: '',   redirectTo: '/index', pathMatch: 'full' },
- 
+
 ];
 
 @NgModule({

@@ -1,0 +1,17 @@
+.addcourseform{
+  max-width: 70%;
+  margin: 30px auto;
+}
+label{
+  font-size: 15px;
+  font-style: oblique;
+  margin-bottom: 10px;
+}
+input,select{
+  max-width: 50%;
+}
+.submitbtn{
+  margin: 20px 20px 20px 0px;
+  background-color: rgb(87, 0, 128);
+  border: 1px solid rgb(87, 0, 128);
+}
