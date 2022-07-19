@@ -11,6 +11,7 @@ export class UserService {
   constructor(private router:Router) { }
   setUser(data:LOGIN_TYPE):void{
     window.localStorage.setItem('token',`Bearer ${data.token}`);
+    window.localStorage.setItem('userId',JSON.stringify(data.id));
     window.localStorage.setItem('user',JSON.stringify(data) )
     console.log('from userLogin',data);
   }
@@ -21,9 +22,19 @@ export class UserService {
     }
     return JSON.parse(userData);
   }
+
   getUserToken():string{
     return window.localStorage.getItem('token') || '';
   }
+
+  getUserId():number|null{
+    let userId = window.localStorage.getItem('userId');
+    if(!userId){
+      return null;
+    }
+    return JSON.parse(userId);
+  }
+
   userExist():boolean{
     return this.getUser() !==  null;
   }
