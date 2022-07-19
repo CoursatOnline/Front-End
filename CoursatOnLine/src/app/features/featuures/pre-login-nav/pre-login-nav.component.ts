@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pre-login-nav',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreLoginNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userSer:UserService) { }
 
   ngOnInit(): void {
   }
+
 
 }

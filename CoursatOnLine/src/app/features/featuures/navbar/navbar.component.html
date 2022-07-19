@@ -38,7 +38,7 @@
 
 
 
-      <ng-container [ngSwitch]="isLoggedIn" class="switch-container">
+      <ng-container [ngSwitch]="login()" class="switch-container">
         <section id="after-login" *ngSwitchCase="true">
 
           <li class="nav-item w-20">
@@ -120,7 +120,7 @@
 
           <li class="nav-item">
             <div class="dropdown" >
-             
+
 
                 <a class="nav-link " href="#"><img id="img-user" src="assets/images/abdelrahman.jpg" alt=""></a>
                 <div class="dropdown-content" id="user">
@@ -136,9 +136,10 @@
                   <a href="#">Corsat cridts</a>
                   <a href="#">Purchase history</a>
                   <hr>
-                  <a href="#">Log out</a>
+
+                  <a *ngIf="login()" (click)="logout()" >Log out</a>
                 </div>
-            
+
             </div>
 
           </li>

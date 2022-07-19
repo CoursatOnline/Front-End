@@ -1,0 +1,34 @@
+
+<div class="blue-container">
+  <div class="signup-form pt-5">
+    <form method="post" #userForm = "ngForm" novalidate (ngSubmit)="userLogin()">
+      {{userForm.value|json}}
+      {{email}}
+      {{password}}
+      {{loginpassword.invalid && loginpassword.touched}}
+      {{loginemail.invalid && loginemail.touched}}
+      {{loginpassword.valid || loginpassword.untouched}}
+      <h2>Login</h2>
+      <p>Enter your email and password to login</p>
+      <hr>
+      <div class="form-group">
+        <input type="email" name="Email" placeholder = "Email" class="form-control"
+         required [(ngModel)]="email" #loginemail="ngModel"
+          [class.is-invalid] = "loginemail.invalid && loginemail.touched">
+         <small class="text-danger" [class.d-none] = "loginemail.valid || loginemail.untouched">Email is required</small>
+      </div>
+      <div class="form-group">
+        <input type="password" name="Password" placeholder = "Password" class="form-control"
+        required [(ngModel)]="password" #loginpassword="ngModel"
+        [class.is-invalid] = "loginpassword.invalid && loginpassword.touched">
+       <small class="text-danger" [class.d-none] = "loginpassword.valid || loginpassword.untouched">Password is required</small>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login"  class="btn btn-primary btn-lg" [disabled]="userForm.form.invalid">
+      </div>
+      <div class="hint-text">Need an account? <a [routerLink] = "['/register/2']">Sign up here</a></div>
+
+    </form>
+  </div>
+</div>
+

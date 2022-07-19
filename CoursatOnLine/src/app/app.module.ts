@@ -27,6 +27,7 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
 import { UploadVidComponent } from './features/upload-vid/upload-vid.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { UploadVidComponent } from './features/upload-vid/upload-vid.component';
     NgbModule,
     HttpClientModule,
     UploadComponent,
-    UploadVidComponent
+    UploadVidComponent,
+    FormsModule
   ],
   exports: [UploadComponent,UploadVidComponent],
   providers: [],
