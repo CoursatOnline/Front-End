@@ -4,16 +4,18 @@
 <div class="container px-4 px-lg-5 mt-5">
 
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
+        
         <div class="col mb-5">
             <div class="card h-100">
+                <a (click)="filter('')">
                 <!-- Product image-->
                 <img class="card-img-top" height="40%" src="assets/images/angular.png" alt="..." />
                 <!-- Product video-->
+                
                 <video class="card-img-top" controls height="60%" src="assets/videos/Introducing Angular DevTools.mp4"
                     alt="..."></video>
                 <!-- Product details-->
-
+                </a>
                 <!-- Product actions-->
                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                     <div class="text-center"><a class="btn btn-outline-dark mt-3" href="#">View Course</a></div>
@@ -57,7 +59,20 @@
 
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'Name'">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+               
+            </div>
+        </ng-container>
 
+    </div>
+</div>
 
 
 <div class="alert alert-primary d-flex align-items-center justify-content-center" role="alert">

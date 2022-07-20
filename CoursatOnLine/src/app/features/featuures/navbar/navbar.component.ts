@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class NavbarComponent implements OnInit {
   logoWidth = 70;
   logoHeight = 65;
   isLoggedIn = false;
-  constructor(private userSer:UserService) { }
+  public searchTerm !: string;
+  public totalItem : number = 0;
+
+  constructor(private userSer:UserService,private cartService : CartService) { }
 
 
   login(){
@@ -22,7 +26,16 @@ export class NavbarComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.cartService.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
   }
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
+   }
 
 }
 

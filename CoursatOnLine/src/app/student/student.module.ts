@@ -14,7 +14,7 @@ const routes:Routes=[
   declarations: [
  
   
-    StudentHomeComponent
+    //StudentHomeComponent
   ],
   imports: [
   CommonModule,

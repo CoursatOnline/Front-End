@@ -29,8 +29,10 @@
               <i class="bi bi-search"></i>
             </button>
           </span>
-          <input type="text" class="form-control search-box" placeholder="Search for...">
-
+          <!-- <input type="text" class="form-control search-box" placeholder="Search for..."> -->
+          <div class="form-group">
+            <input type="text" class="form-control"name="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+        </div>
         </div>
 
       </form>
