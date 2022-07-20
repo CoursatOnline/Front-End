@@ -5,14 +5,14 @@
     text-decoration: none;
 }
 
-.p-paython ,
+.p-paython,
 .p-csharp,
 .p-JavaScript,
 .p-Angular,
 .p-React,
 .p-Excel,
 .p-PowerPoint,
-.p-MVC{
+.p-MVC {
     /* opacity: 0; */
     background-color: white;
     text-decoration: none;
@@ -26,6 +26,7 @@
     justify-content: space-evenly;
     padding: 15px;
 }
+
 .paython,
 .csharp,
 .JavaScript,
@@ -38,57 +39,22 @@
     /* color: #b5a9a9; */
     font-weight: bold;
 }
-/* 
-.paython:hover,
-.csharp:hover,
-.JavaScript:hover,
-.Angular:hover,
-.React:hover,
-.Excel:hover,
-.PowerPoint:hover,
-.MVC:hover{
-color: black;
-}
 
+#description {
+    color: rgb(145 145 145);
+    font-size: 15px;
+    font-family: fangsong;
 
-.paython:hover .p-paython{
-    opacity: 1;
 }
-
-
-.csharp:hover .p-csharp{
-    opacity: 1;
-}
-
-.JavaScript:hover .p-JavaScript{
-    opacity: 1;
-}
-.Angular:hover .p-Angular{
-    opacity: 1;
-}
-.React:hover .p-React{
-    opacity: 1;
-}
-
-.Excel:hover .p-Excel{
-    opacity: 1;
-}
-
-.PowerPoint:hover .p-PowerPoint{
-    opacity: 1;
-}
-
-.MVC:hover .p-MVC{
-    opacity: 1;
-} */
 
 .broad {
     margin-top: 30px;
     margin-left: 40px;
+
     margin-bottom: 36px;
 }
 
 .paython-imges {
     display: flex;
-    
+
 }

@@ -43,7 +43,10 @@ import { FormsModule } from '@angular/forms';
     PowerpointComponent,
     AngularComponent,
     ReactComponent,
-    MvcComponent,NavbarafterloginComponent,StudentHomeComponent,CartCoursesComponent
+    MvcComponent,
+    NavbarafterloginComponent,
+    StudentHomeComponent,
+    CartCoursesComponent
   ],
   imports: [
     BrowserModule,
