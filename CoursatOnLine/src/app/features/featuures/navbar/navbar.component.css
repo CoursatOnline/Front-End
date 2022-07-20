@@ -188,10 +188,8 @@ a#heart {
   left: 100%;
   bottom: 0%;
   height: 290px;
-
 }
-
-#paython:hover .subCat {
+.cat:hover .subCat {
   display: block;
 }
 
@@ -204,3 +202,4 @@ a#heart {
   left: 80%;
   position: absolute;
 }
+
