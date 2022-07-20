@@ -20,7 +20,15 @@
             <a routerLink="/react">React</a>
             <a routerLink="/mvc">MVC</a> -->
             <!-- gotocategorycourses -->
-            <a routerLink="courseCategory/getcategorycourses/{{category.id}}" *ngFor="let category of categories">{{category.name}}</a>
+            <a routerLink="courseCategory/getcategorycourses/{{category.id}}" *ngFor="let category of categories" class="cat">{{category.name}}<i class="fa fa-light fa-arrow-right fs-6" id="arrow"></i>
+              <ul class="subCat">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+              </ul>
+            </a>
+
           </div>
         </div>
       </li>
