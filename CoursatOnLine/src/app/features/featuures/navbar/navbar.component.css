@@ -77,7 +77,7 @@ a:hover {
   position: relative;
   display: inline-block;
   transform: rotate(0);
-  transition: all 2s;
+ 
 }
 
 .dropdown-content {
@@ -87,6 +87,7 @@ a:hover {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  
   /* margin-top: 23px; */
 }
 
@@ -164,12 +165,41 @@ a:hover {
 a#heart {
   font-size: 40px;
 }
-#user{
+
+#user {
   margin-left: -120px;
 }
 
-#img-user{
+#img-user {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
+
+.subCat {
+  display: none;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  float: right;
+  position: absolute;
+  left: 100%;
+  bottom: 0%;
+  height: 290px;
+}
+.cat:hover .subCat {
+  display: block;
+}
+
+.csharp:hover .subCat {
+  display: block;
+}
+
+#arrow {
+
+  left: 80%;
+  position: absolute;
+}
+

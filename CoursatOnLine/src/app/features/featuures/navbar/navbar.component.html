@@ -1,3 +1,10 @@
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"> 
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light  pt-lg-1 shadow p-1 mb-0 bg-white rounded nav-container">
   <a class="navbar-brand" href="#"><img [src]="logoSource" [width]="logoWidth" [height]="logoHeight" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -12,13 +19,23 @@
         <div class="dropdown">
 
           <a class="dropbtn nav-link ">Categories </a>
-          <div class="dropdown-content">
-            <a routerLink="/paython">Paython</a>
+          <div class="dropdown-content" >
+            <!-- <a routerLink="/paython">Paython</a>
             <a routerLink="/csharp">C#</a>
             <a routerLink="/javascript">JavaScript</a>
             <a routerLink="/angular">Angular</a>
             <a routerLink="/react">React</a>
-            <a routerLink="/mvc">MVC</a>
+            <a routerLink="/mvc">MVC</a> -->
+            <!-- gotocategorycourses -->
+            <a routerLink="courseCategory/getcategorycourses/{{category.id}}" *ngFor="let category of categories" class="cat">{{category.name}}<i class="fa fa-light fa-arrow-right fs-6" id="arrow"></i>
+              <ul class="subCat">
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+              </ul>
+            </a>
+
           </div>
         </div>
       </li>
@@ -124,7 +141,7 @@
             <div class="dropdown" >
 
 
-                <a class="nav-link " href="#"><img id="img-user" src="assets/images/abdelrahman.jpg" alt=""></a>
+                <a class="nav-link " href="#"><img id="img-user" src="assets/images/abdelrahman.jpg" alt="" ></a>
                 <div class="dropdown-content" id="user">
                   <a href="#">My Learning</a>
                   <a href="#">My Cart</a>

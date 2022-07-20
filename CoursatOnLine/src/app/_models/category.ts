@@ -5,3 +5,5 @@ export interface Category {
   show : boolean,
   adminId : number
 }
+
+

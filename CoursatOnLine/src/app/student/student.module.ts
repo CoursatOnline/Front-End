@@ -14,7 +14,11 @@ const routes:Routes=[
   declarations: [
  
   
+<<<<<<< HEAD
     //StudentHomeComponent
+=======
+  
+>>>>>>> 48f584c48151f40788476192798c8e2922c5049e
   ],
   imports: [
   CommonModule,

@@ -11,12 +11,19 @@ export class LoginService {
 
   constructor(private http:HttpClient,private userLoginSer:UserService,private router:Router) { }
   private baseUrl:string = 'https://localhost:7135/api/Auth/token';
+  //private baseUrl:string = 'https://localhost:44344//api/Auth/token';//IIS Express
   login(data:{email:string,password:string}){
     this.http.post<LOGIN_TYPE>(this.baseUrl,data).subscribe(
      (data)=>{
         this.userLoginSer.setUser(data),
         console.log('from service',data);
-        this.router.navigate(['/index']);
+        if(data.roles[0]=='Student'){
+          this.router.navigate(['/index']);
+        }
+        else if(data.roles[0]=='Instructor'){
+          this.router.navigate(['/listCourses']);
+        }
+
      },
      (err) => console.log(err)
 
