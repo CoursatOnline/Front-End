@@ -12,13 +12,15 @@
         <div class="dropdown">
 
           <a class="dropbtn nav-link ">Categories </a>
-          <div class="dropdown-content">
-            <a routerLink="/paython">Paython</a>
+          <div class="dropdown-content" >
+            <!-- <a routerLink="/paython">Paython</a>
             <a routerLink="/csharp">C#</a>
             <a routerLink="/javascript">JavaScript</a>
             <a routerLink="/angular">Angular</a>
             <a routerLink="/react">React</a>
-            <a routerLink="/mvc">MVC</a>
+            <a routerLink="/mvc">MVC</a> -->
+            <!-- gotocategorycourses -->
+            <a routerLink="courseCategory/getcategorycourses/{{category.id}}" *ngFor="let category of categories">{{category.name}}</a>
           </div>
         </div>
       </li>
@@ -122,7 +124,7 @@
             <div class="dropdown" >
 
 
-                <a class="nav-link " href="#"><img id="img-user" src="assets/images/abdelrahman.jpg" alt=""></a>
+                <a class="nav-link " href="#"><img id="img-user" src="assets/images/abdelrahman.jpg" alt="" ></a>
                 <div class="dropdown-content" id="user">
                   <a href="#">My Learning</a>
                   <a href="#">My Cart</a>
