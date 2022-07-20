@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from './../../../_models/course';
-import { CoursesService } from './../../../services/courses.service';
+import { ApiCourseService } from 'src/app/services/api-course.service';
 
 @Component({
   selector: 'app-list-courses',
@@ -9,18 +9,13 @@ import { CoursesService } from './../../../services/courses.service';
 })
 export class ListCoursesComponent implements OnInit {
 
-<<<<<<< HEAD
- 
-  constructor() { }
-=======
   courses:Course[]=[];
   public mainUrl:string="";
-  constructor(public courseServ:CoursesService) { }
->>>>>>> 48f584c48151f40788476192798c8e2922c5049e
+  constructor(public api:ApiCourseService) { }
 
   ngOnInit(): void {
    this.mainUrl="https://localhost:7135/";
-    this.courseServ.getAllCourses().subscribe({
+    this.api.getAllCourses().subscribe({
       next:a=>{this.courses=a}
     })
   }
