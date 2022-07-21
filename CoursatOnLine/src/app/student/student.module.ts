@@ -13,10 +13,7 @@ const routes:Routes=[
 
 @NgModule({
   declarations: [
- 
-  
-  
-  
+    //StudentHomeComponent
     LearningComponent
   ],
   imports: [
