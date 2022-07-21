@@ -26,6 +26,8 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 
 
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
+import { SearchComponent } from './features/featuures/search/search.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
 
@@ -44,7 +46,7 @@ import { FilterPipe } from './filter.pipe';
     PowerpointComponent,
     AngularComponent,
     ReactComponent,
-    MvcComponent,NavbarafterloginComponent,StudentHomeComponent,CartCoursesComponent, FilterPipe
+    MvcComponent,NavbarafterloginComponent,CartCoursesComponent,StudentHomeComponent,SearchComponent, FilterPipe
   ],
   imports: [
     BrowserModule,

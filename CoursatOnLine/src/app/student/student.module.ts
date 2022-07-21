@@ -8,13 +8,16 @@ import { StudentHomeComponent } from './student-home/student-home.component';
 import { LearningComponent } from './learning/learning.component';
 
 const routes:Routes=[
-  {path:"studentHome",component:StudentHomeComponent}
+
 ]
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
+=======
     //StudentHomeComponent
     LearningComponent
+>>>>>>> 74ca3784529cb3e282d8d217baca74cca482036d
   ],
   imports: [
   CommonModule,

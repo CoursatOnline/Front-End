@@ -5,12 +5,14 @@ import { CategoryCoursesComponent } from './category-courses/category-courses.co
 import { IndexComponent } from './index/index.component';
 
 
+
 const routes: Routes = [
 
   // [path:'category/categoryDetails/:id',Component:CategoryDetailsComponent]
   {path: 'list',component:IndexComponent},
   {path: 'add',component:AddCategoryComponent},
   {path: 'categoryCourses/:id',component:CategoryCoursesComponent},
+
   {path: '',redirectTo:'list',pathMatch:'full'},
 
 ];

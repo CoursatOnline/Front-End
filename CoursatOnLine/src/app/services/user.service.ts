@@ -55,6 +55,7 @@ export class UserService {
   getStudentById():Observable<any> {
     this.userId = this.getUserId();
     return this.http.get(`${this.baseUrl}student/${this.userId}`);
+
   }
   clear(){
     window.localStorage.removeItem('user');

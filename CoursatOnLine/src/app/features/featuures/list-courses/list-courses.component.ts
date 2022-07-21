@@ -10,6 +10,7 @@ import { ApiCourseService } from 'src/app/services/api-course.service';
 export class ListCoursesComponent implements OnInit {
 
   courses:Course[]=[];
+  searchText:string = "";
   public mainUrl:string="";
   constructor(public api:ApiCourseService) { }
 
@@ -18,6 +19,11 @@ export class ListCoursesComponent implements OnInit {
     this.api.getAllCourses().subscribe({
       next:a=>{this.courses=a}
     })
+  }
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
 }

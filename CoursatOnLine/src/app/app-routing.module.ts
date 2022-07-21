@@ -6,8 +6,11 @@ import { CategoryCoursesComponent } from './categories/category-courses/category
 import { ExcelComponent } from './courses/excel/excel.component';
 import { MvcComponent } from './courses/mvc/mvc.component';
 
+
 import { HomeComponent } from './features/featuures/home/home.component';
 import { ListCoursesComponent } from './features/featuures/list-courses/list-courses.component';
+import { SearchComponent } from './features/featuures/search/search.component';
+import { StudentHomeComponent } from './student/student-home/student-home.component';
 import { LearningComponent } from './student/learning/learning.component';
 import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component';
 
@@ -18,10 +21,13 @@ const routes: Routes = [
   { path: 'learning', component:LearningComponent},
   { path: 'cart', component:CartCoursesComponent},
   {path: 'categoryCourses/:id',component:CategoryCoursesComponent},
+
   //{path: 'login',component:LoginComponent},
   { path: 'categories', loadChildren: () => import('./categories/categories.module').then(c => c.CategoriesModule) },
   { path: 'auth', loadChildren: () => import('./auth/auth.module').then(c => c.AuthModule) },
+  {path:"studentHome",component:StudentHomeComponent},
   {path: 'register/:id',component:RegisterComponent},
+  {path:'search/:id',component:SearchComponent},
   {path: 'login',component:LoginComponent},
   { path: '',   redirectTo: '/index', pathMatch: 'full' },
 

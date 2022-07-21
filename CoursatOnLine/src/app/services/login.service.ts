@@ -18,10 +18,10 @@ export class LoginService {
         this.userLoginSer.setUser(data),
         console.log('from service',data);
         if(data.roles[0]=='Student'){
-          this.router.navigate(['/index']);
+          this.router.navigate(['/studentHome']);
         }
         else if(data.roles[0]=='Instructor'){
-          this.router.navigate(['/listCourses']);
+          this.router.navigate(['/Instructor']);
         }
 
      },

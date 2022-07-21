@@ -24,33 +24,37 @@
             <a routerLink="/react">React</a>
             <a routerLink="/mvc">MVC</a> -->
             <!-- gotocategorycourses -->
-            <a routerLink="courseCategory/getcategorycourses/{{category.id}}" *ngFor="let category of categories"
+            <a routerLink="/categoryCourses/{{category.id}}" *ngFor="let category of categories"
               class="cat">{{category.name}}<i class="fa fa-light fa-arrow-right fs-6" id="arrow"></i>
-              <ul class="subCat">
-                <li>a</li>
-                <li>b</li>
-                <li>c</li>
-                <li>d</li>
+              <ul>
+                <li *ngFor="let course of courses"><a routerLink=""></a>{{course.name}}</li>
               </ul>
             </a>
 
           </div>
         </div>
       </li>
-      <form class="form-inline my-2 my-lg-0  search-form">
+      <form class="form-inline my-2 my-lg-0  search-form" method="post" #userForm="ngForm" novalidate>
         <div class="input-group search-group">
           <span class="input-group-btn">
-            <button class="btn btn-default search-btn" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
+            <a routerLink="/search/{{searchText}}"><button class="btn btn-default search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </a>
           </span>
+          <input type="text" name="search" [(ngModel)]="searchText" class="form-control search-box"
+            placeholder="Search for...">
           <!-- <input type="text" class="form-control search-box" placeholder="Search for..."> -->
-          <div class="form-group">
+          <!-- <div class="form-group">
             <input type="text" class="form-control"name="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
-        </div>
-        </div>
+        </div> -->
 
+        </div>
+        <!-- {{userForm.value|json}}
+        {{enterSearchValue}}
+        {{searchWord.valid}} -->
       </form>
+      <!-- <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
 
 
 
@@ -164,15 +168,7 @@
               <div class="dropdown-content" id="user">
                 <a routerLink="/learning">My Learning</a>
                 <a routerLink="/cart">My Cart</a>
-                <a href="#">Wish List</a>
-                <hr>
-                <a href="#">Notifactions</a>
-                <a href="#">Messages</a>
-                <hr>
-                <a href="#">Account settings</a>
-                <a href="#">Payment Methods</a>
-                <a href="#">Corsat cridts</a>
-                <a href="#">Purchase history</a>
+
                 <hr>
 
                 <a *ngIf="login()" (click)="logout()">Log out</a>
