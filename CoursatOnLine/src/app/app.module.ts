@@ -26,9 +26,14 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 
 
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './features/featuures/search/search.component';
 
+=======
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
+>>>>>>> 74ca3784529cb3e282d8d217baca74cca482036d
 
 @NgModule({
   declarations: [
@@ -45,7 +50,11 @@ import { SearchComponent } from './features/featuures/search/search.component';
     PowerpointComponent,
     AngularComponent,
     ReactComponent,
+<<<<<<< HEAD
     MvcComponent,NavbarafterloginComponent,CartCoursesComponent,StudentHomeComponent,SearchComponent
+=======
+    MvcComponent,NavbarafterloginComponent,StudentHomeComponent,CartCoursesComponent, FilterPipe
+>>>>>>> 74ca3784529cb3e282d8d217baca74cca482036d
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,7 @@ import { SearchComponent } from './features/featuures/search/search.component';
     NgbModule,
     HttpClientModule,
     UploadComponent,
-    FormsModule
+    FormsModule,ReactiveFormsModule
   ],
   exports: [UploadComponent],
   providers: [],

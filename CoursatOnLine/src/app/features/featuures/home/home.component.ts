@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-
+import { StudentHomeComponent } from 'src/app/student/student-home/student-home.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
