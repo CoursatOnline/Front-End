@@ -5,6 +5,7 @@ import { StudentRoutingModule } from './student-routing.module';
 
 import { RouterModule, Routes } from '@angular/router';
 import { StudentHomeComponent } from './student-home/student-home.component';
+import { LearningComponent } from './learning/learning.component';
 
 const routes:Routes=[
   {path:"studentHome",component:StudentHomeComponent}
@@ -15,6 +16,8 @@ const routes:Routes=[
  
   
   
+  
+    LearningComponent
   ],
   imports: [
   CommonModule,

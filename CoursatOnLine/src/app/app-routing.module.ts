@@ -6,10 +6,14 @@ import { CategoryCoursesComponent } from './categories/category-courses/category
 
 import { HomeComponent } from './features/featuures/home/home.component';
 import { ListCoursesComponent } from './features/featuures/list-courses/list-courses.component';
+import { LearningComponent } from './student/learning/learning.component';
+import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component';
 
 const routes: Routes = [
   { path: 'index', component:HomeComponent},
   { path: 'listCourses', component:ListCoursesComponent},
+  { path: 'learning', component:LearningComponent},
+  { path: 'cart', component:CartCoursesComponent},
   {path: 'categoryCourses/:id',component:CategoryCoursesComponent},
   //{path: 'login',component:LoginComponent},
   { path: 'categories', loadChildren: () => import('./categories/categories.module').then(c => c.CategoriesModule) },
