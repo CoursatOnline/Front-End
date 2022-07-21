@@ -10,6 +10,7 @@ import { CoursesService } from './../../../services/courses.service';
 export class ListCoursesComponent implements OnInit {
 
   courses:Course[]=[];
+  searchText:string = "";
   public mainUrl:string="";
   constructor(public courseServ:CoursesService) { }
 
@@ -18,6 +19,11 @@ export class ListCoursesComponent implements OnInit {
     this.courseServ.getAllCourses().subscribe({
       next:a=>{this.courses=a}
     })
+  }
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
 }

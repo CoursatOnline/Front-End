@@ -27,6 +27,8 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './features/featuures/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { FormsModule } from '@angular/forms';
     PowerpointComponent,
     AngularComponent,
     ReactComponent,
-    MvcComponent,NavbarafterloginComponent,CartCoursesComponent,StudentHomeComponent
+    MvcComponent,NavbarafterloginComponent,CartCoursesComponent,StudentHomeComponent,SearchComponent
   ],
   imports: [
     BrowserModule,

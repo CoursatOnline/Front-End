@@ -10,11 +10,13 @@ import { CategoryCoursesComponent } from './category-courses/category-courses.co
 
 
 
+
 @NgModule({
   declarations: [
     IndexComponent,
     AddCategoryComponent,
     CategoryCoursesComponent,
+
   ],
   imports: [
     CommonModule,

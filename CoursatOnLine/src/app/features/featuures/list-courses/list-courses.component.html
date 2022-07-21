@@ -1,91 +1,14 @@
-<!-- <h1 class="broad">A broad selection of courses</h1>
-
-<div class="categories row g-0">
-
-    <div class=" container-fluid ">
-
-        <div class="row d-flex justify-content-around g-0">
-            <div class="card text-white bg-primary mb-3 col col-md-6 col-12" style="max-width: 18rem;"
-                *ngFor="let item of courses">
-                <div class="card-header"><a class="paython text-white" routerLink="/paython">{{item.name}}</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">{{item.description}}</h5>
-                    <p class="card-text">{{item.price}}$</p>
-                </div>
-            </div> -->
-            <!-- <div class="card text-white bg-secondary mb-3 col col-md-6 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="csharp text-white" routerLink="/csharp">C#</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div> -->
-            <!-- <div class="card text-white bg-success  mb-3 col col-md-6 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="JavaScript text-white" routerLink="/javascript">JavaScript</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div> -->
-            <!-- <div class="card text-white bg-danger  mb-3 col col-md-6 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="Angular text-white" routerLink="/angular">Angular</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div> -->
-
-
-        <!-- </div> -->
-
-        <!-- <div class="row d-flex justify-content-around g-0">
-            <div class="card text-white bg-dark  mb-3 col col-md-12 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="React text-white" routerLink="/react">React</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-light  mb-3 col col-md-12 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="Excel text-dark" routerLink="/excel">Excel</a></div>
-                <div class="card-body text-dark">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-warning  mb-3 col col-md-12 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="PowerPoint text-dark" routerLink="/powerpont">PowerPoint</a></div>
-                <div class="card-body text-dark">
-                    <h5 class="card-title ">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-            <div class="card text-white bg-info mb-3 col col-md-12 col-12" style="max-width: 18rem;">
-                <div class="card-header"><a class="MVC text-white" routerLink="/mvc">MVC</a></div>
-                <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                </div>
-            </div>
-        </div> -->
-    <!-- </div>
-</div> -->
 
 
 
+<app-search (searchTextChanged)="onSearchTextEntered($event)" class="style"></app-search>
 
 
 <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-        
+
         <div class="col mb-5" *ngFor="let item of courses">
+          <div *ngIf="searchText==='' || item.name.toLocaleLowerCase().includes(searchText)">
             <div class="card h-100" *ngIf="item.show == true">
                 <!-- Product image-->
                 <img class="card-img-top" src="{{this.mainUrl}}{{item.image}}" height="32%"  alt="..." />
@@ -106,6 +29,7 @@
                     <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
                 </div>
             </div>
+          </div>
         </div>
     </div>
 </div>

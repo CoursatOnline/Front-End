@@ -7,14 +7,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentHomeComponent } from './student-home/student-home.component';
 
 const routes:Routes=[
-  {path:"studentHome",component:StudentHomeComponent}
+
 ]
 
 @NgModule({
   declarations: [
- 
-  
-  
   ],
   imports: [
   CommonModule,

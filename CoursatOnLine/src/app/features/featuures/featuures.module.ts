@@ -10,6 +10,7 @@ import { ReactComponent } from './../../courses/react/react.component';
 import { ExcelComponent } from './../../courses/excel/excel.component';
 import { PowerpointComponent } from './../../courses/powerpoint/powerpoint.component';
 import { MvcComponent } from './../../courses/mvc/mvc.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes:Routes = [
@@ -21,13 +22,16 @@ const routes:Routes = [
   { path: 'excel', component:ExcelComponent},
   { path: 'powerpont', component:PowerpointComponent},
   { path: 'mvc', component:MvcComponent},
+  {path:'search/:id',component:SearchComponent}
 ];
 
 @NgModule({
   declarations: [
-   
-  
-   
+
+
+
+
+    // SearchComponent
   ],
   imports: [
 CommonModule,FormsModule,RouterModule.forChild(routes)

@@ -9,7 +9,7 @@ import { Category } from '../_models/category';
 })
 export class CategoriesService {
 
-  
+
   constructor(private httpclient:HttpClient) { }
 
   public get(url: string): Observable<Category|any>{
@@ -18,4 +18,5 @@ export class CategoriesService {
   public post(url: string,category:Category,options: any):Observable<Category | any>{
     return this.httpclient.post(url,category);
   }
+
 }
