@@ -22,6 +22,8 @@ export class LoginService {
         }
         else if(data.roles[0]=='Instructor'){
           this.router.navigate(['/Instructor']);
+        }else if (data.roles[0] == 'Admin'){
+          this.router.navigate(['/categories']);
         }
 
      },

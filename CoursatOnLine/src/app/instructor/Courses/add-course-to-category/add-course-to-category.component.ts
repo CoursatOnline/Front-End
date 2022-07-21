@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 import { Category } from 'src/app/_models/category';
@@ -39,7 +40,7 @@ export class AddCourseToCategoryComponent implements OnInit {
     })
 }
 
-  constructor(private catSer:CategoriesService, private courseSer:CoursesService, private catCourseSer: CategoriescoursesService,private userSer:UserService, private date:DatePipe) { }
+  constructor(private catSer:CategoriesService, private courseSer:CoursesService, private catCourseSer: CategoriescoursesService,private userSer:UserService, private date:DatePipe,private router:Router) { }
 
   ngOnInit(): void {
     this.catSer.get(this.catBaseUrl+"getall").subscribe(
@@ -59,7 +60,7 @@ export class AddCourseToCategoryComponent implements OnInit {
     this.catcourseObj.show = true;
     console.log(this.catcourseObj);
     this.catCourseSer.post(this.catCoursesBaseUrl + "create" , this.catcourseObj).subscribe(
-      next => {console.log(next); this.alertflag = true;},
+      next => {console.log(next); this.alertflag = true;this.router.navigate(['/Instructor'])},
       error => {console.log(error)}
     )
   }

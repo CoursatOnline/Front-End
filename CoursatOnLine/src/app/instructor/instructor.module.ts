@@ -10,6 +10,7 @@ import { AddCourseToCategoryComponent } from './Courses/add-course-to-category/a
 import { UploadVidComponent } from '../features/upload-vid/upload-vid.component';
 import { UploadComponent } from '../features/upload/upload.component';
 import { HomeComponent } from './home/home.component';
+import { ListChaptersComponent } from '../features/list-chapters/list-chapters.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     InstructorRoutingModule,
     UploadVidComponent,
-    UploadComponent
+    UploadComponent,
+    ListChaptersComponent
   ],providers:[
     DatePipe
   ]

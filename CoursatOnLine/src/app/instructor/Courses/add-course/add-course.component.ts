@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { CoursesService } from 'src/app/services/courses.service';
 import { CategoriescoursesService } from 'src/app/services/categoriescourses.service';
@@ -21,7 +22,7 @@ export class AddCourseComponent implements OnInit {
   public courseBaseUrl:string = "https://localhost:7135/api/course/";
   alertflag : boolean = false;
 
-  constructor(private courseSer:CoursesService, private catCoursesSer:CategoriescoursesService,private userSer:UserService) { }
+  constructor(private courseSer:CoursesService, private catCoursesSer:CategoriescoursesService,private userSer:UserService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -38,7 +39,7 @@ export class AddCourseComponent implements OnInit {
     if(UploadComponent.shortLink != ""){
       this.course.image = UploadComponent.shortLink;
       this.courseSer.post(this.courseBaseUrl + "create",this.course).subscribe(
-        next  => {console.log(next);this.alertflag = true;},
+        next  => {console.log(next);this.alertflag = true;this.router.navigate(['/Instructor'])},
         error => {console.log(error)}
         )
     }

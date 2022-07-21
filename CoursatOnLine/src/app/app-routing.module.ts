@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'listCourses', component:ListCoursesComponent},
   { path: 'listChapters/:crsid', component:ListChaptersComponent},
 
-  { path: 'instructor', loadChildren: () => import('./instructor/instructor.module').then(i => i.InstructorModule)},
+  { path: 'Instructor', loadChildren: () => import('./instructor/instructor.module').then(i => i.InstructorModule)},
   { path: 'learning', component:LearningComponent},
   { path: 'cart', component:CartCoursesComponent},
   {path: 'categoryCourses/:id',component:CategoryCoursesComponent},

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { Course } from 'src/app/_models/icourse';
 import { Chapter } from 'src/app/_models/chapter';
@@ -28,7 +29,7 @@ export class AddChapterComponent implements OnInit {
     })
 }
 
-  constructor(private crsSer:CoursesService, private userSer:UserService,private chpterSer:ChapterService) { }
+  constructor(private crsSer:CoursesService, private userSer:UserService,private chpterSer:ChapterService,private router:Router) { }
 
   ngOnInit(): void {
     this.crsSer.get(this.crssBaseUrl + "getall").subscribe(
@@ -46,7 +47,7 @@ export class AddChapterComponent implements OnInit {
       this.alertflag = true;
       // console.log(this.chapter);
       this.chpterSer.post(this.chapterBaseUrl+"create",this.chapter,this.options).subscribe(
-        next => {this.alertflag = true;},
+        next => {this.alertflag = true;this.router.navigate(['/Instructor'])},
         error => {console.log(error)}
       )
     }
