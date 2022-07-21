@@ -17,7 +17,13 @@ export class LoginService {
      (data)=>{
         this.userLoginSer.setUser(data),
         console.log('from service',data);
-        this.router.navigate(['/index']);
+        if(data.roles[0]=='Student'){
+          this.router.navigate(['/studentHome']);
+        }
+        else if(data.roles[0]=='Instructor'){
+          this.router.navigate(['/Instructor']);
+        }
+
      },
      (err) => console.log(err)
 

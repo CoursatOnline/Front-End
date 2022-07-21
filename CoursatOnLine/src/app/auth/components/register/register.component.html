@@ -1,8 +1,8 @@
 
 <div class="blue-container">
   <div class="signup-form pt-5">
-    <form method="post" #userForm = "ngForm" novalidate (ngSubmit)="onSubmit()">
-      {{userForm.value|json}}
+    <form method="post" #userForm = "ngForm" novalidate (ngSubmit)="onSubmit()" class="shadow-lg">
+      <!-- {{userForm.value|json}}
       {{user.Email}}
       {{user.Password}}
       {{user.FirstName}}
@@ -10,7 +10,7 @@
       {{user.Username}}
       {{registerpassword.invalid && registerpassword.touched}}
       {{registeremail.invalid && registeremail.touched}}
-      {{registerpassword.valid || registerpassword.untouched}}
+      {{registerpassword.valid || registerpassword.untouched}} -->
       <h2>Sign Up</h2>
       <p>Please fill in this form to create an account!</p>
       <hr>

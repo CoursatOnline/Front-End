@@ -23,4 +23,6 @@ export class UploadService {
     // with formData as req
     return this.http.post(this.baseApiUrl, formData)
 }
+
+
 }

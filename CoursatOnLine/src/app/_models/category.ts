@@ -3,5 +3,8 @@ export interface Category {
   name : string,
   image: string,
   show : boolean,
-  adminId : number
+  adminId : number,
+  _CategoriesCourses:[]
 }
+
+

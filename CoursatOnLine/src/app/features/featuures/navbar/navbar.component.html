@@ -1,3 +1,7 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light  pt-lg-1 shadow p-1 mb-0 bg-white rounded nav-container">
   <a class="navbar-brand" href="#"><img [src]="logoSource" [width]="logoWidth" [height]="logoHeight" /></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -13,27 +17,44 @@
 
           <a class="dropbtn nav-link ">Categories </a>
           <div class="dropdown-content">
-            <a routerLink="/paython">Paython</a>
+            <!-- <a routerLink="/paython">Paython</a>
             <a routerLink="/csharp">C#</a>
             <a routerLink="/javascript">JavaScript</a>
             <a routerLink="/angular">Angular</a>
             <a routerLink="/react">React</a>
-            <a routerLink="/mvc">MVC</a>
+            <a routerLink="/mvc">MVC</a> -->
+            <!-- gotocategorycourses -->
+            <a routerLink="/categoryCourses/{{category.id}}" *ngFor="let category of categories"
+              class="cat">{{category.name}}<i class="fa fa-light fa-arrow-right fs-6" id="arrow"></i>
+              <ul>
+                <li *ngFor="let course of courses"><a routerLink=""></a>{{course.name}}</li>
+              </ul>
+            </a>
+
           </div>
         </div>
       </li>
-      <form class="form-inline my-2 my-lg-0  search-form">
+      <form class="form-inline my-2 my-lg-0  search-form" method="post" #userForm="ngForm" novalidate>
         <div class="input-group search-group">
           <span class="input-group-btn">
-            <button class="btn btn-default search-btn" type="submit">
-              <i class="bi bi-search"></i>
-            </button>
+            <a routerLink="/search/{{searchText}}"><button class="btn btn-default search-btn">
+                <i class="bi bi-search"></i>
+              </button>
+            </a>
           </span>
-          <input type="text" class="form-control search-box" placeholder="Search for...">
+          <input type="text" name="search" [(ngModel)]="searchText" class="form-control search-box"
+            placeholder="Search for...">
+          <!-- <input type="text" class="form-control search-box" placeholder="Search for..."> -->
+          <!-- <div class="form-group">
+            <input type="text" class="form-control"name="search" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+        </div> -->
 
         </div>
-
+        <!-- {{userForm.value|json}}
+        {{enterSearchValue}}
+        {{searchWord.valid}} -->
       </form>
+      <!-- <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search> -->
 
 
 
@@ -59,7 +80,7 @@
           <li class="nav-item">
             <div class="dropdown">
               <!-- <button class="dropbtn">Dropdown</button> -->
-              <a class="nav-link " href="#">My Learning </a>
+              <a class="nav-link " routerLink="/learning">My Learning </a>
               <div class="dropdown-content">
                 <div class="shopping">
                   Your cart is empty.
@@ -88,7 +109,21 @@
           <li class="nav-item">
             <div class="dropdown">
               <!-- <button class="dropbtn">Dropdown</button> -->
-              <a class="nav-link " href="#"><i class="bi bi-cart3"></i></a>
+              <div *ngIf="countOfCourses > 0 else noCartes">
+                <a class="nav-link " href="#"><i class="nn bi bi-cart3">{{countOfCourses}}</i></a>
+              </div>
+
+              <ng-template #noCartes>
+                <i class="bi bi-cart3" style="font-size:29px"></i>
+                <div class="dropdown-content">
+                  <div class="shopping">
+                    Your cart is empty.
+                    <br>
+                    <a id="Keep-shopping" routerLink="/listCourses">Keep shopping</a>
+                  </div>
+                </div>
+              </ng-template>
+
               <div class="dropdown-content">
                 <div class="shopping">
                   Your cart is empty.
@@ -104,14 +139,21 @@
           <li class="nav-item">
             <div class="dropdown">
               <!-- <button class="dropbtn">Dropdown</button> -->
-              <a class="nav-link " href="#"><i class="fa fa-bell" style="font-size:29px"></i></a>
-              <div class="dropdown-content">
-                <div class="shopping">
-                  Your cart is empty.
-                  <br>
-                  <a id="Keep-shopping" href="/">Keep shopping</a>
-                </div>
+              <div *ngIf="countOfCourses > 0 else noCourses">
+                <a class="nav-link " routerLink="/cart"><i
+                    class="bell fa fa-solid fa-bell fa-shake">{{countOfCourses}}</i></a>
               </div>
+              <ng-template #noCourses>
+                <i class="fa fa-bell" style="font-size:29px"></i>
+                <div class="dropdown-content">
+                  <div class="shopping">
+                    Your cart is empty.
+                    <br>
+                    <a id="Keep-shopping" routerLink="/listCourses">Keep shopping</a>
+                  </div>
+                </div>
+              </ng-template>
+
             </div>
 
           </li>
@@ -119,26 +161,18 @@
           <!-- <i class='fa fa-user-circle' style='font-size:29px'></i> -->
 
           <li class="nav-item">
-            <div class="dropdown" >
+            <div class="dropdown">
 
 
-                <a class="nav-link " href="#"><img id="img-user" [src]="this.userimage" alt=""></a>
-                <div class="dropdown-content" id="user">
-                  <a href="#">My Learning</a>
-                  <a href="#">My Cart</a>
-                  <a href="#">Wish List</a>
-                  <hr>
-                  <a href="#">Notifactions</a>
-                  <a href="#">Messages</a>
-                  <hr>
-                  <a href="#">Account settings</a>
-                  <a href="#">Payment Methods</a>
-                  <a href="#">Corsat cridts</a>
-                  <a href="#">Purchase history</a>
-                  <hr>
+              <a class="nav-link " href="#"><img id="img-user" [src]="userimage" alt=""></a>
+              <div class="dropdown-content" id="user">
+                <a routerLink="/learning">My Learning</a>
+                <a routerLink="/cart">My Cart</a>
 
-                  <a *ngIf="login()" (click)="logout()" >Log out</a>
-                </div>
+                <hr>
+
+                <a *ngIf="login()" (click)="logout()">Log out</a>
+              </div>
 
             </div>
 

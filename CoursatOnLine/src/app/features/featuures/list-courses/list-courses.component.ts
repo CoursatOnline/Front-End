@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from './../../../_models/course';
+import { ApiCourseService } from 'src/app/services/api-course.service';
 
 @Component({
   selector: 'app-list-courses',
@@ -7,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCoursesComponent implements OnInit {
 
-  
-  constructor() { }
+  courses:Course[]=[];
+  searchText:string = "";
+  public mainUrl:string="";
+  constructor(public api:ApiCourseService) { }
 
   ngOnInit(): void {
+   this.mainUrl="https://localhost:7135/";
+    this.api.getAllCourses().subscribe({
+      next:a=>{this.courses=a}
+    })
+  }
+
+  onSearchTextEntered(searchValue:string){
+    this.searchText = searchValue;
+    console.log(this.searchText);
   }
 
 }
+
