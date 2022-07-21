@@ -1,0 +1,62 @@
+
+<!-- <div class="d-flex container " style=" height: 500px" > -->
+    <!--<section class="flex-grow-1 p-3">
+        <video class="border border-3 border-dark" height="90%" width="70%" controls>
+            <source [src]="this.videosrc" type="video/mp4">
+        </video>
+    </section>
+    <aside class=" m-3">
+        <h4> ALL chapters : </h4>
+        <ol>
+            <li *ngFor="let chapter of chapters" class="bg-opacity-75">
+                <p (click)="loadvideo(chapter.id)" >
+                    {{chapter.title}}
+                </p>
+            </li>
+        </ol>
+    </aside>-->
+    <section class="projects-section bg-light" id="projects">
+      <div class="container px-4 px-lg-5">
+          <!-- Featured Project Row-->
+          <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+              <div class="col-xl-8 col-lg-7">
+
+                  <video class="video mb-3 mb-lg-0" width="320" height="240" id="course" controls>
+                      <source [src]="this.videosrc" type="video/mp4">
+                  </video>
+              </div>
+              <div class="col-xl-4 col-lg-5">
+                  <div class="featured-text text-center text-lg-left">
+
+
+                      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                          <!-- Nav Item - Pages Collapse Menu -->
+                          <li class="nav-item">
+
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                  data-parent="#accordionSidebar">
+                                  <div class="bg-white py-2 collapse-inner rounded">
+                                      <h6 class="collapse-header">Custom Components:</h6>
+                                      <a class="collapse-item" href="buttons.html">Buttons</a>
+                                      <a class="collapse-item" href="cards.html">Cards</a>
+                                  </div>
+                              </div>
+                          </li>
+
+                          <li class="nav-item" *ngFor="let chapter of chapters">
+                              <a class="nav-link" >
+                                  <i class="fas fa-fw fa-chart-area"></i>
+                                  <span (click)="loadvideo(chapter.id)">{{chapter.title}}</span></a>
+                          </li>
+                          <hr>
+
+
+                      </ul>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+<!-- </div> -->

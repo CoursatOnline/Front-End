@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CoursesService } from 'src/app/services/courses.service';
-import { CategoriesService } from 'src/app/services/categories.service';
-import { Category } from 'src/app/_models/category';
-import { Course } from 'src/app/_models/course';
+import { CategoriescoursesService } from 'src/app/services/categoriescourses.service';
+import { Course } from 'src/app/_models/icourse';
+import { UserService } from 'src/app/services/user.service';
+import { UploadComponent } from 'src/app/features/upload/upload.component';
+
 
 @Component({
   selector: 'app-add-course',
@@ -10,29 +13,41 @@ import { Course } from 'src/app/_models/course';
   styleUrls: ['./add-course.component.css']
 })
 export class AddCourseComponent implements OnInit {
-  cats:Category|any = [];
-  course:Course|any = {};
-  public catBaseUrl:string = "https://localhost:7135/api/category/";
+  course:Course|any = {}; /** Course object to bind to  */
+  insid: string |any  =  ""; /** get the instructor id from local storage and store it here */
+  crsId: number |any  = 0;          /** get saved course id to use it later */
+  crscatsIds : number[] |any = [];  /** get selected categories that the course belong to  */
+   /** Base Url for courses */
   public courseBaseUrl:string = "https://localhost:7135/api/course/";
+  alertflag : boolean = false;
 
-  constructor(private courseSer:CoursesService, private catSer:CategoriesService) { }
+  constructor(private courseSer:CoursesService, private catCoursesSer:CategoriescoursesService,private userSer:UserService) { }
 
   ngOnInit(): void {
-    this.catSer.get(this.catBaseUrl+"getall").subscribe(
-      value => {this.cats = value;/*console.log(this.cats)*/},
-      error => {console.log(error)}
-    )
+
+    this.insid = localStorage.getItem('userId');
   }
   onCreate(value:any){
     this.course.name = value.crsname;
     this.course.description = value.crsdescription;
     this.course.price = value.crsprice;
     this.course.ispaid = JSON.parse(value.crsispaid);
-    this.course.insid = value.crsins;
+    this.course.insid= JSON.parse(this.insid);
+    // console.log(this.insid);
+    // console.log(this.course.insid);
+    if(UploadComponent.shortLink != ""){
+      this.course.image = UploadComponent.shortLink;
+      this.courseSer.post(this.courseBaseUrl + "create",this.course).subscribe(
+        next  => {console.log(next);this.alertflag = true;},
+        error => {console.log(error)}
+        )
+    }
 
-    // this.courseSer.post(this.courseBaseUrl,this.course).subscribe
 
-    console.log(this.course);
+    //console.log(`${this.courseBaseUrl}getbyname/?${this.testcoursename}`);
+    // console.log(this.course);
   }
-
+  close(){
+    this.alertflag = false;
+  }
 }

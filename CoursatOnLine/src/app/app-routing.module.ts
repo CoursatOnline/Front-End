@@ -5,10 +5,12 @@ import { RegisterComponent } from './auth/components/register/register.component
 
 import { HomeComponent } from './features/featuures/home/home.component';
 import { ListCoursesComponent } from './features/featuures/list-courses/list-courses.component';
+import { ListChaptersComponent } from './features/list-chapters/list-chapters.component';
 
 const routes: Routes = [
   { path: 'index', component:HomeComponent},
   { path: 'listCourses', component:ListCoursesComponent},
+  { path: 'listChapters/:crsid', component:ListChaptersComponent},
 
   { path: 'instructor', loadChildren: () => import('./instructor/instructor.module').then(i => i.InstructorModule)},
   //{path: 'login',component:LoginComponent},

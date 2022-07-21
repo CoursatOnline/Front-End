@@ -16,4 +16,5 @@ export class CategoriesService {
   public post(url: string,category:Category,options: any):Observable<Category | any>{
     return this.httpclient.post(url,category);
   }
+
 }

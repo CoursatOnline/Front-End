@@ -1,1 +1,9 @@
-<p>list-courses works!</p>
+<h5>My Courses:</h5>
+<div class="card coursecard" *ngFor="let course of courses">
+  <img src="{{this.baseUrl}}{{course.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{course.name}}</h5>
+    <p class="card-text">{{course.description}}</p>
+    <a routerLink="/listChapters/{{course.id}}" class="btn btn-primary">Go to chapters list</a>
+  </div>
+</div>

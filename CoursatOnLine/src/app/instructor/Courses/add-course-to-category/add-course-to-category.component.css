@@ -1,4 +1,4 @@
-.addcourseform{
+.addcoursetocategoryform{
   max-width: 70%;
   margin: 30px auto;
 }
@@ -15,6 +15,7 @@ input,select{
   background-color: rgb(87, 0, 128);
   border: 1px solid rgb(87, 0, 128);
 }
+
 .alert-success {
   width : 65%;
 }

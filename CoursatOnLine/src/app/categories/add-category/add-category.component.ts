@@ -4,6 +4,7 @@ import { UploadComponent } from 'src/app/features/upload/upload.component';
 import { Category } from 'src/app/_models/category';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -14,20 +15,22 @@ import { Router } from '@angular/router';
 })
 export class AddCategoryComponent implements OnInit {
   public category:Category|any = {};
+  private adminid:number |any = 0;
   public baseUrl:string = "https://localhost:7135/api/category/create";
   public options : any  = {
     headers: new HttpHeaders({
         'Content-Type': 'multipart/form-data',
-        // 'Authorization': `Bearer ${token}`
+        'authorization': this.userSer.getUserToken()
     })
 }
-  constructor(public catSer:CategoriesService,private router:Router) {}
+  constructor(public catSer:CategoriesService,private router:Router,private userSer: UserService) {}
 
   ngOnInit(): void {
+    this.adminid = localStorage.getItem('userId');
   }
   public onCreate(value:any){
     this.category.name = value.catname;
-    this.category.adminId = value.adminid;
+    this.category.adminId = this.adminid;
     // this.category.show = value.showflag;
     this.category.image = UploadComponent.shortLink;
     // console.log(this.category);

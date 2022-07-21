@@ -3,6 +3,7 @@ export interface Course {
   name  : string,
   description: string,
   price : number,
+  image : string,
   ispaid: boolean,
   show  : boolean,
   insid : number

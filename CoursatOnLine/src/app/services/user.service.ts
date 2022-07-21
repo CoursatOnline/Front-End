@@ -1,3 +1,7 @@
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from '../_models/user';
+
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LOGIN_TYPE } from '../_models/login';
@@ -8,7 +12,7 @@ import { LOGIN_TYPE } from '../_models/login';
 })
 export class UserService {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private httpclient: HttpClient) { }
   setUser(data:LOGIN_TYPE):void{
     window.localStorage.setItem('token',`Bearer ${data.token}`);
     window.localStorage.setItem('userId',JSON.stringify(data.id));
@@ -44,4 +48,10 @@ export class UserService {
     window.localStorage.removeItem('token');
     this.router.navigate(['/login'])
   }
+
+  public getInsById(url: string,id: number): Observable<any>{
+    return this.httpclient.get(url + id);
+  }
+
+
 }

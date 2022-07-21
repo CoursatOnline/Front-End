@@ -28,6 +28,7 @@ import { CartCoursesComponent } from './cart/cart-courses/cart-courses.component
 import { NavbarafterloginComponent } from './features/featuures/navbarafterlogin/navbarafterlogin.component';
 import { UploadVidComponent } from './features/upload-vid/upload-vid.component';
 import { FormsModule } from '@angular/forms';
+import { ListChaptersComponent } from './features/list-chapters/list-chapters.component';
 
 @NgModule({
   declarations: [
